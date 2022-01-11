@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+<!--
+
+    <bean id="airtel" class="com.seleniumexpress.Airtel"> </bean>
+    <bean id="vodaphone" class="com.seleniumexpress.Vodaphone"> </bean>
+-->
+
+    <bean id="sim" class="com.IOC.SpringIOC.Airtel"> </bean>
+
+
+<!--
+
+    &lt;!&ndash;SETTER INJECTION&ndash;&gt;
+    <bean id="student" class="Student">
+        <property name="studentName" value="Thudhigeni Shreeja"/>
+        <property name="id" value="100"/>
+    </bean>
+
+    <bean id="shree" class="Student">
+        <property name="studentName" value="Thudhigeni Oracle"/>
+        <property name="id" value="200"/>
+    </bean>
+-->
+<!--
+    &lt;!&ndash;CONSTRUCTER INJECTION&ndash;&gt;
+    <bean id="student" class="com.SetterAndConstructor.di.Student">
+            <constructor-arg name="studentName" value="Shreeja"/>
+            <constructor-arg name="id" value="1000"/>
+    </bean>
+    <bean id="student2" class="com.SetterAndConstructor.di.Student">
+              <constructor-arg name="id" value="1" type="java.lang.Integer"/>
+    </bean>
+ -->
+
+ <!--
+
+    &lt;!&ndash;OBJECT INJECTION USING SETTER USING PROPERTY TAG&ndash;&gt;
+    &lt;!&ndash;In Student class one dependency exist named MathCheat,
+        for which we created object using setter injection
+        property tag, bean inside bean
+     &ndash;&gt;
+
+    &lt;!&ndash;Creating math object EXPLICITLY and assigned using REF attribute&ndash;&gt;
+    <bean id="mathCheat" class="com.ObjectInjection.di.MathCheat"></bean>
+
+    <bean id="student" class="com.ObjectInjection.di.Student">
+        <property name="id" value="10"/>
+        &lt;!&ndash;<property name="math">
+            <bean class="com.ObjectInjection.di.MathCheat"></bean>
+        </property>&ndash;&gt;
+        <property name="math" ref="mathCheat"/>
+    </bean>
+
+    &lt;!&ndash;INJECTING OBJECT IN STANDARD WAY USING "REF" &ndash;&gt;
+    <bean id="student2" class="com.ObjectInjection.di.Student2">
+        &lt;!&ndash;<property name="math">
+            <bean class="com.ObjectInjection.di.MathCheat"/>
+        </property>&ndash;&gt;
+        <property name="math" ref="mathCheat"/>
+    </bean>
+ -->
+
+ <!--   //WITHOUT INTERFACE
+    <bean id="cheat" class="com.SpringLooseCoupling.di.ScienceCheat"></bean>
+    <bean id="student" class="com.SpringLooseCoupling.di.Student">
+        <property name="scienceCheat" ref="cheat"></property>
+    </bean>-->
+
+<!--
+
+    <bean id="sciencecheat" class="com.SpringLooseCoupling.di.ScienceCheat"></bean>
+    <bean id="mathcheat" class="com.SpringLooseCoupling.di.MathCheat"></bean>
+    <bean id="javacheat" class="com.SpringLooseCoupling.di.JavaCheat"></bean>
+
+    <bean id="student" class="com.SpringLooseCoupling.di.Student">
+        <property name="cheating" ref="javacheat"/>
+    </bean>
+
+-->
+
+
+
+</beans>

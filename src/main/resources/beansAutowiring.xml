@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+    <beans xmlns="http://www.springframework.org/schema/beans"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns:context="http://www.springframework.org/schema/context"
+           xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd">
+
+        <context:annotation-config/>
+
+
+
+<!--
+
+            <bean id="heartOctopus" class="com.AutowiringQualifier.Heart"></bean>
+            &lt;!&ndash;Autowiring byName should match the bean id and reference dependecny class(Human)&ndash;&gt;
+            &lt;!&ndash;Autowiring byType means type of bean and type of variable should match&ndash;&gt;
+            &lt;!&ndash;If constructer is present in dependency class, it injects object using autowire="constructor"
+              (or) use @Autowired on constructer, which works same but should add default constructor &ndash;&gt;
+            <bean id="human" class="com.AutowiringQualifier.Human">
+                &lt;!&ndash;We are explicitly creating and injecting
+                <property name="heart" ref="heart"></property>
+                &ndash;&gt;
+            </bean>
+
+-->
+
+
+    <bean id="heartHuman" class="com.AutowiringQualifier.Heart">
+        <property name="nameofAnimal" value="Human"/>
+        <property name="noofHearts" value="1"/>
+    </bean>
+
+    <bean id="heartOctopus" class="com.AutowiringQualifier.Heart">
+        <property name="nameofAnimal" value="Octopus"/>
+        <property name="noofHearts" value="3"/>
+    </bean>
+
+    <bean id="human" class="com.AutowiringQualifier.Human"></bean>
+
+</beans>
